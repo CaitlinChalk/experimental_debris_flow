@@ -37,6 +37,7 @@ for i = 1:length(tplot)
     title(['t = ' num2str(tplot(i)) ' s'], 'Interpreter','Latex','FontSize',20)
     iterName = ['vel_' num2str(i)];
     %SaveFigureWin(gcf,15,15,iterName)
+    if
 end
 
 %% standard deviation contours
@@ -46,7 +47,7 @@ for i = 1:length(tplot)
     plotContour(PIV_flow_out,parameters,tplot(i),1,0);
     title(['t = ' num2str(tplot(i)) ' s'], 'Interpreter','Latex','FontSize',20)
     iterName = ['sd_' num2str(i)];
-    %SaveFigureWin(gcf,15,15,iterName)
+    SaveFigureWin(gcf,15,15,iterName)
 end
 
 %% normalised standard deviation contours

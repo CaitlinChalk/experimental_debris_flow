@@ -1,3 +1,6 @@
+%run this code and an image scale will appear
+%the cursor shows the pixel info
+
 scale = 'data/scalefinecoarse.jpg';
 A = imread(scale);
 %close all

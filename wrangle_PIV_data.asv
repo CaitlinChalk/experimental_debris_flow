@@ -61,6 +61,32 @@ figure
 plotVectors(A,PIV_snap,run,parameters,1)
 title(['t = ' num2str(t) ' s']);
 
+% make gif animation
+filename = test.gif;
+n = length(PIV.run1.time);
+for i = 1:n
+    time_out = i*(1/1200);
+    frame = num2str(PIV.run1.jpeg(i),'%05.f');
+    jpeg_name = ['data\jpegs\' dirName '\fine' num2str(i) frame '.jpg'];
+    A = imread(jpeg_name);
+    PIV_snapi = selectFlowTime(PIV,time_out);
+    plotVectors(A,PIV_snap,1,parameters,1)
+    title(['t = ' num2str(time_out) ' s'], 'Interpreter','Latex','FontSize',20)
+     % Capture the plot as an image 
+      frame2 = getframe(gcf); 
+      im = frame2im(frame2); 
+      [imind,cm] = rgb2ind(im,256); 
+      % Write to the GIF File 
+      if n == 1 
+          imwrite(imind,cm,filename,'gif', 'Loopcount',inf); 
+      else 
+          imwrite(imind,cm,filename,'gif','WriteMode','append'); 
+      end 
+end
+
+
+
+
 
 %% Play with cropping the camera images (not required for next steps, but left here anyway)
 % any flow)

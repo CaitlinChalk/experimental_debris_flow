@@ -13,7 +13,6 @@ names = names(~tf);
 
 n = length(names);
 
-%select experimental run (1,2 or 3)
 run = 1;
 runname = ['run' num2str(run)];
 
@@ -49,13 +48,19 @@ xlim([-600 760])
 %SaveFigureWin(fig1,12,12,'shear_new.pdf')
 saveas(gcf,'Figures/shear.jpeg');
 
-%% dimensionless plots - Figure 11 b (xlim = [-5 5]), and 11 c (xlim = [-60 80])
+%% dimensionless plots - Figure 11 b (xlim = [-5 5]), and 11 c (xlim 
 fig2 = plotShear(PIV_flow_out,parameters,tplot,symbols,colours,1);
 %legend off;
 legend boxon
 xlim([-5 5]) %[-60 80]
 %SaveFigureWin(fig2,12,12,'shear_nd_new.pdf')
 
+%%
+fig2;
+legend off
+xlim([-60 80])
+pbaspect([1 2 1])
+%SaveFigureWin(fig2,12,12,'shear_nd_new2.pdf')
 
 
 

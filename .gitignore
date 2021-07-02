@@ -1,2 +1,7 @@
-data/*
+data/grain_size_data
+data/*.mat
+data/jpegs
+data/jpegs_select
+data/scalefinecoarse.jpg
+data/scalemixed.jpg
 *.asv

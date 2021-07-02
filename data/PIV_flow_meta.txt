@@ -1,0 +1,21 @@
+PIV_flow.mat contains a structure named PIV_flow_out, which is the processed PIV data, with 13 fields:
+
+parameters - contains useful information that applies all data:
+	width - width of each flow snapshot in metres
+	height - height of flow snapshot in metres
+	pix1 - value of one pixel in metres
+	y_upper/y-lower - upper and lower y values (metres) for which each flow image could be cropped (not required for analysis)
+
+The remaining 12 fields correspond to 12 specified flow times for which the data have been processed:
+t1,t2,t3....t12
+Each field contains a subfield run1,run2,run3 - corresponding to the repeated experimental runs.
+Within these fields are the following:
+t - the actual time in seconds corresponding to the subfield (e.g. for t1, t = 0.035 s)
+X - the x coordinates in metres of the grid corresponding to the camera field of view (this is constant for every dataset)
+Y - the y coordinates in metres of the grid corresponding to the camera field of view (this is constant for every dataset)
+U - the time-averaged horizontal velocity at each grid point for the specified time - cropped to align with the flow free surface 
+V - the time-averaged vertical velocity at each grid point for the specified time - cropped to align with the flow free surface 
+SD - the standard deviation at that time, after averaging over 30 frames
+h - the height of the flow free surface (metres)
+jpeg - image file of the flow at time t. View in matlab using imshow(jpeg).
+

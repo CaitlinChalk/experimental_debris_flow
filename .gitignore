@@ -1,8 +1,5 @@
-data/grain_size_data
-data/*.mat
-data/jpegs
-data/jpegs_select
-data/scalefinecoarse.jpg
-data/scalemixed.jpg
-*.asv
 data/
+*.asv
+
+!data/PIV_data_meta.txt
+!data/PIV_flow_meta.txt

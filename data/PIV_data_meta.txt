@@ -1,0 +1,11 @@
+PIV_data.mat contains a structure named PIV_data, with three fields corresponding to each experimental run - run1,run2,run3
+
+Each field contains the following sub-fields:
+
+time - an array containing the time in seconds corresponding to each dataset provided
+timeStep - the number of the image captured corresponding to time (e.g. 499 is the 499th image captured with the high speed camera)
+X - The x coordinates in metres of the grid corresponding to the camera field of view (this is constant for every dataset)
+Y - The y coordinates in metres of the grid corresponding to the camera field of view (this is constant for every dataset)
+U - The instantaneous horizontal velocity at each grid point, for every time in t
+V - The instantaneous vertical velocity at each grid point, for every time in t
+Vel_mag - the velocity magnitude at each grid point (sqrt(U^2 + V^2))
